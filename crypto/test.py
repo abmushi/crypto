@@ -2,6 +2,18 @@ import crypto_monero as cm
 import ed25519_dholth as ed25519
 import binascii
 import random
+import hashlib
+
+def test_hash():
+	M = 'hello world'
+	h1 = cm.H(M.encode())
+
+	s = hashlib.sha3_256()
+	s.update(M.encode())
+	h2 = s.hexdigest()[2:].encode()
+
+	print(h1)
+	print(h2)
 
 def test_encode_decode():
 	for i in range(0,10):
@@ -205,6 +217,7 @@ def test_curve1():
 	print(alphaPK_pt==sk_x_alpha_x_G_pt)
 
 if __name__ == '__main__':
+	test_hash()
 	# test_sig_1()
 	# test_curve()
 	# test_curve1()
@@ -213,4 +226,4 @@ if __name__ == '__main__':
 	# test_Schnorr_Signatures()
 	# test_AOS_Signature()
 	# test_Borromean_Signature_single()
-	test_Borromean_Signature_batch()
+	# test_Borromean_Signature_batch()

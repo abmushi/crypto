@@ -69,21 +69,22 @@ def schnorr_signature(M,sk_hex):
 	e_int = ed25519.decodeint(binascii.unhexlify(e_hex))
 	sk_int = ed25519.decodeint(binascii.unhexlify(sk_hex))
 
-	sig_int = (alpha_int - e_int*sk_int) % ed25519.l
-	sig_hex = binascii.hexlify(ed25519.encodeint(sig_int))
-	return Q_hex,sig_hex
+	s_int = (alpha_int - e_int*sk_int) % ed25519.l
+	s_hex = binascii.hexlify(ed25519.encodeint(s_int))
+	return e_hex,s_hex
 
-def schnorr_verify(M,PK_hex,Q_hex,sig_hex):
-	e_hex = H(M.encode()+Q_hex)
-	sG_hex = scalarmult_base(sig_hex)
+def schnorr_verify(M,PK_hex,e_hex,s_hex):
+	sG_hex = scalarmult_base(s_hex)
 	eP_hex = scalarmult(PK_hex, e_hex)
 
 	sG = ed25519.pt_xform( ed25519.decodepoint(binascii.unhexlify(sG_hex)) )
 	eP = ed25519.pt_xform( ed25519.decodepoint(binascii.unhexlify(eP_hex)) )
 
-	sG_p_eP_pt = ed25519.pt_unxform( ed25519.xpt_add(sG,eP) )
-	sG_p_eP_hex = binascii.hexlify(ed25519.encodepoint(sG_p_eP_pt))
-	return sG_p_eP_hex == Q_hex
+	Q_pt = ed25519.pt_unxform( ed25519.xpt_add(sG,eP) )
+	Q_hex = binascii.hexlify(ed25519.encodepoint(Q_pt))
+	ee_hex = H(M.encode()+Q_hex)
+
+	return e_hex == ee_hex
 
 # AOS Ring Signatures
 def create_decoy_group(size=5):
