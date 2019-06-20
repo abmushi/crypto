@@ -1,0 +1,45 @@
+{
+  "status": "executed",
+  "cpu_usage_us": 309,
+  "net_usage_words": 17,
+  "trx": {
+    "signatures": [
+      "SIG_K1_K7uKeofLXqiHYdktNU3pqGT8xtaYiXbx9bhQxWQBpojSde4Qy92MkCopKGcV29iL5hyiX3nXD8SchTyFqrcRzTsvSSqQ3w"
+    ],
+    "compression": "none",
+    "packed_context_free_data": "",
+    "packed_trx": "b9930b5d13392ea15559000000000100a6823403ea3055000000572d3ccdcd01f0f93eba0af7291a00000000a8ed32322af0f93eba0af7291a80a98a48a169a63b4095a9a30000000004454f53000000000931303633343430393300",
+    "id": "078a1598b513d5610b2fdc3d5e233b59117434073192846761d26f0b4b847b3b",
+    "context_free_data": [],
+    "transaction": {
+      "expiration": "2019-06-20T14:10:01",
+      "ref_block_num": 14611,
+      "ref_block_prefix": 1498784046,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [
+        {
+          "account": "eosio.token",
+          "name": "transfer",
+          "authorization": [
+            {
+              "actor": "3cozi2pubvwz",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "from": "3cozi2pubvwz",
+            "memo": "106344093",
+            "quantity": "274580.0000 EOS",
+            "to": "binancecleos"
+          },
+          "hex_data": "f0f93eba0af7291a80a98a48a169a63b4095a9a30000000004454f530000000009313036333434303933"
+        }
+      ],
+      "transaction_extensions": []
+    }
+  }
+}
+
