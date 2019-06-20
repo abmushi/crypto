@@ -1,0 +1,21 @@
+{
+  "amount": "300000000.00000000", 
+  "block": 573063, 
+  "blockhash": "00000000000000000015495d9909afc4a108303291cb097b674819ceb24a0419", 
+  "blocktime": 1556131281, 
+  "confirmations": 8544, 
+  "divisible": true, 
+  "fee": "0.00070001", 
+  "flags": null, 
+  "ismine": false, 
+  "positioninblock": 205, 
+  "propertyid": 31, 
+  "propertyname": "TetherUS", 
+  "referenceaddress": "1NTMakcgVwQpMdGxRQnFKyb3G1FAJysSfz", 
+  "sendingaddress": "32TLn1WLcu8LtfvweLzYUYU6ubc2YV9eZs", 
+  "txid": "0c8c22ee5cd69649ff36c0396bb9ce951425614a32129d8d54c0144895ef4e7a", 
+  "type": "Grant Property Tokens", 
+  "type_int": 55, 
+  "valid": true, 
+  "version": 0
+}
